@@ -14,10 +14,11 @@ urlpatterns = patterns('',
 
     # Uncomment the next line to enable the admin:
     #url(r'^admin/', include(admin.site.urls)),
-    (r'^$'               , 'information.views.index'),
-    (r'^player/$'        , 'information.views.player'),
-    (r'^player/add$'     , 'information.views.addplayer'),
+    (r'^$'                     , 'information.views.index'),
+    (r'^player/$'              , 'information.views.player'),
+    (r'^player/add$'           , 'information.views.addplayer'),
     (r'^player/delete/(\d+)$'  , 'information.views.deleteplayer'),
-    (r'^gametype/$'      , 'information.views.gametype'),
-    (r'^gametype/add$'   , 'information.views.addgametype'),
+    (r'^gametype/$'            , 'information.views.gametype'),
+    (r'^gametype/add$'         , 'information.views.addgametype'),
+    (r'^gametype/delete/(\d+)$', 'information.views.deletegametype'),
 )
