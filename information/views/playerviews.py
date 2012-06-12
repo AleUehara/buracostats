@@ -1,26 +1,23 @@
 #-*- coding: utf-8 -*-
 from django.shortcuts import render_to_response
-from forms import FormPlayer
+from ..forms import PlayerForm
 from django.template import RequestContext
+from ..models import Player
 
 def player(request):
-	return render_to_response("list.html", {})
+	values = Player.objects.all()
+	return render_to_response("playerlist.html", {'values': values})
 
 def addplayer(request):
-	form = FormPlayer(request.POST, request.FILES)
-	if request.method == 'POST':
-		form = FormPlayer(request.POST, request.FILES)
-		#if form.is_valid():
-		#	dados = form.cleaned_data
-		#	send_post = 'envia_teste.py'
-		#	has_error = os.system('python ../../%s' %(send_post))
-		#	if has_error:
-		#		return render_to_response('adiciona.html', {'error' : 'ERRO ao enviar dados','form' : form,})
-		#	print 'enviado'
-		#	return render_to_response("salvo.html", {})
+    form = PlayerForm(request.POST or None)
+    if form.is_valid():
+        mymodel = form.save()
+        mymodel.added_at_djangocon = True
+        mymodel.save()
+        return player(request)
+    return render_to_response("add.html", {'form' : form}, context_instance=RequestContext(request))
 
-	else:
-		#year = str(datetime.now().year)
-		#form = FormPost({'date': year, })
-		pass
-	return render_to_response("add.html", {'form' : form}, context_instance=RequestContext(request))
+def deleteplayer(request, id):    
+    u = Player.objects.get(pk=id).delete()
+    values = Player.objects.all()
+    return render_to_response("playerlist.html", {'values': values})

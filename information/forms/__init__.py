@@ -1,1 +1,1 @@
-from playerforms import FormPlayer
+from playerforms import PlayerForm

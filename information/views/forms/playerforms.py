@@ -1,6 +1,7 @@
 #-*- coding: utf-8 -*-
 from django import forms
+from ..models import Player
 
-
-class FormPlayer(forms.Form):
-  name = forms.CharField(max_length=100)
+class PlayerForm(forms.ModelForm):
+    class Meta:
+        model = Player

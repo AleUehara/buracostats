@@ -1,6 +1,18 @@
 {% extends 'base.html' %}
 
 {% block corpo %}
+	{% block body%}
+	<!-- body -->
+	{% endblock %}
+
+    <ul>
+      {% for value in values %}
+       <li>
+  		 {{value}} <a href='./delete/{{value.id}}'> Delete</a> <br /> 
+       </li>
+       {% empty %}
+       <li>No values</li>
+      {% endfor %}
+    </ul>
 
 {% endblock %}
-
