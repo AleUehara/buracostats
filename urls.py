@@ -21,4 +21,8 @@ urlpatterns = patterns('',
     (r'^gametype/$'            , 'information.views.gametype'),
     (r'^gametype/add$'         , 'information.views.addgametype'),
     (r'^gametype/delete/(\d+)$', 'information.views.deletegametype'),
+
+    (r'^tournament/$'            , 'game.views.tournament'),
+    (r'^tournament/add$'         , 'game.views.addtournament'),
+    (r'^tournament/delete/(\d+)$', 'game.views.deletetournament'),
 )

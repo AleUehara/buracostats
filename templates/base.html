@@ -2,12 +2,24 @@
 	"http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
 <html>
 <head>
+    <link rel="stylesheet" href="/static/themes/base/jquery.ui.all.css">
+    <script src="/static/jquery.js"></script>
+    <script src="/static/ui/jquery.ui.core.js"></script>
+    <script src="/static/ui/jquery.ui.widget.js"></script>
+    <script src="/static/ui/jquery.ui.datepicker.js"></script>
+
+    <script>
+    $(function() {
+        $( "#id_date" ).datepicker();
+    });
+    </script>
+
 	{% block cabecalho%}
 	<title>GAME</title>
 	{% endblock %}
 </head>
 <body>
-	<a href="/">HOME</a> | <a href="/player">PLAYER<a href="/"> | <a href="/gametype">GAME TYPE</a> |
+	<a href="/">HOME</a> | <a href="/tournament">GAME<a href="/"> | <a href="/player">PLAYER<a href="/"> | <a href="/gametype">GAME TYPE</a> |
 	{% block corpo%}
 	<!-- body -->
 	{% endblock %}

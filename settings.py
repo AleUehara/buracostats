@@ -68,11 +68,15 @@ STATIC_URL = '/static/'
 # Examples: "http://foo.com/static/admin/", "/static/admin/".
 ADMIN_MEDIA_PREFIX = '/static/admin/'
 
+ROOTDIR=os.path.realpath(os.path.dirname(__file__))
+
+
 # Additional locations of static files
 STATICFILES_DIRS = (
     # Put strings here, like "/home/html/static" or "C:/www/django/static".
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.
+    (os.path.join(ROOTDIR, 'static', 'jquery', 'development-bundle'),)
 )
 
 # List of finder classes that know how to find static files in
@@ -103,8 +107,6 @@ MIDDLEWARE_CLASSES = (
 
 ROOT_URLCONF = 'buracostats.urls'
 
-ROOTDIR=os.path.realpath(os.path.dirname(__file__))
-
 TEMPLATE_DIRS = (
     # Put strings here, like "/home/html/django_templates" or "C:/www/django/templates".
     # Always use forward slashes, even on Windows.
@@ -120,6 +122,7 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'information',
+    'game',
     # Uncomment the next line to enable the admin:
     #'django.contrib.admin',
     # Uncomment the next line to enable admin documentation:
