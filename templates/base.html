@@ -2,16 +2,20 @@
 	"http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
 <html>
 <head>
-    <link rel="stylesheet" href="/static/themes/base/jquery.ui.all.css">
-    <script src="/static/jquery.js"></script>
-    <script src="/static/ui/jquery.ui.core.js"></script>
-    <script src="/static/ui/jquery.ui.widget.js"></script>
-    <script src="/static/ui/jquery.ui.datepicker.js"></script>
+    <link rel="stylesheet" href="/static/jquery/development-bundle/themes/base/jquery.ui.all.css">
+    <link rel="stylesheet" href="/static/custom/buracostats.css">
+    <script src="/static/jquery/development-bundle/jquery.js"></script>
+    <script src="/static/jquery/development-bundle/ui/jquery.ui.core.js"></script>
+    <script src="/static/jquery/development-bundle/ui/jquery.ui.widget.js"></script>
+    <script src="/static/jquery/development-bundle/ui/jquery.ui.datepicker.js"></script>
 
     <script>
     $(function() {
         $( "#id_date" ).datepicker({ dateFormat:'dd/mm/yy'});
     });
+    {% block script%}
+    {% endblock %}
+
     </script>
 
 	{% block cabecalho%}

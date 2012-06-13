@@ -1,0 +1,44 @@
+#wrapper
+{
+    width: 400px;
+    height: auto;
+}
+#menu
+{
+    height: 30px;
+    width: auto;
+    background-color: #ccc;
+}
+#team1
+{
+   float: right;
+   height: 300px;
+   width: 200px;
+   background-color: #aaa;
+}
+#team2
+{
+   width: 200px;
+   background-color: #aaa;
+   height: 300px;
+}
+
+
+#col1 {
+   width: 48%;
+   float: left;
+   font-weight: bold;
+   padding: 10px 0 10px 0;
+   background-color:#003366;
+}
+#col2 {
+   width: 48%;
+   float: right;
+   font-weight: bold;
+   clear: right;
+   padding: 10px 0 10px 0;
+   background-color:#003366;
+}
+#content-below {
+   clear: both
+}

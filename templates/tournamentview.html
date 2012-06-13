@@ -1,14 +1,52 @@
 {% extends 'base.html' %}
 
+    {% block script%}
+		$(document).ready(function()
+		{
+		  //for div
+		  $("div:odd").css("background-color", "#F4F4F8");
+		  $("div:even").css("background-color", "#EFF1F1");
+
+		  //for table row
+		  $("tr:even").css("background-color", "#F4F4F8");
+		  $("tr:odd").css("background-color", "#EFF1F1");
+		});
+    {% endblock %}
+
 {% block corpo %}
+
 <br />
     <ul>
-      {% for value in values %}
-       <li>
-  		 {{value}}
+       <li>Date:
+  		 {{value.date}}
        </li>
-       {% empty %}
-       <li>No values</li>
-      {% endfor %}
+       <li>Total points:
+  		 {{value.winner_points}}
+       </li>
+       <li>First Team:
+       	  {% for value in value.players_first_team.all %}
+  		  <br />{{value}}
+  		  {% endfor %}
+       </li>
+       <li>Second Team:
+       	  {% for value in value.players_second_team.all %}
+  		  <br />{{value}}
+  		  {% endfor %}
+       </li>
+
     </ul>
+<form action="/game/addgame" method="post">
+<div id='col1'>First Team</div>
+<div id='col2'>Second Team</div>
+<div id='col1'>
+      	  {% for value in value.players_first_team.all %}
+  		  <div>{{value}}</div>
+  		  {% endfor %}
+</div>
+<div id='col2'>
+       	  {% for value in value.players_second_team.all %}
+  		  <div>{{value}}<input type="submit" name="newsletter_sub" value="Subscribe" /></div>
+  		  {% endfor %}
+</div>
+</form>
 {% endblock %}
