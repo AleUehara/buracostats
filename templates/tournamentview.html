@@ -1,13 +1,11 @@
-{% extends 'list.html' %}
+{% extends 'base.html' %}
 
 {% block corpo %}
-<br />
-<a href="/gametype/add">Add</a>
 <br />
     <ul>
       {% for value in values %}
        <li>
-  		 {{value}} <a href='/gametype/delete/{{value.id}}'> Delete</a> <br /> 
+  		 {{value}}
        </li>
        {% empty %}
        <li>No values</li>

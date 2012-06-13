@@ -10,7 +10,7 @@
 
     <script>
     $(function() {
-        $( "#id_date" ).datepicker({ dateFormat:'dd-mm-yy'});
+        $( "#id_date" ).datepicker({ dateFormat:'dd/mm/yy'});
     });
     </script>
 
@@ -19,7 +19,7 @@
 	{% endblock %}
 </head>
 <body>
-	<a href="/">HOME</a> | <a href="/tournament">GAME<a href="/"> | <a href="/player">PLAYER<a href="/"> | <a href="/gametype">GAME TYPE</a> |
+	<a href="/">HOME</a> | <a href="/tournament">GAME<a href="/"> | <a href="/player">PLAYER<a href="/"> | <a href="/gametype">GAME TYPE</a> | <a href="/winnerpoints">WINNER POINTS</a> |
 	{% block corpo%}
 	<!-- body -->
 	{% endblock %}

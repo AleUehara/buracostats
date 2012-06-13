@@ -1,1 +1,1 @@
-from tournamentviews import tournament, addtournament, deletetournament
+from tournamentviews import tournament, addtournament, deletetournament, viewtournament

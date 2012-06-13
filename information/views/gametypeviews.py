@@ -1,8 +1,8 @@
 #-*- coding: utf-8 -*-
 from django.shortcuts import render_to_response
-from ..forms import GameTypeForm
+from information.forms import GameTypeForm
 from django.template import RequestContext
-from ..models import GameType
+from information.models import GameType
 
 def gametype(request):
 	values = GameType.objects.all()

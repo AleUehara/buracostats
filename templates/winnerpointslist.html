@@ -2,12 +2,12 @@
 
 {% block corpo %}
 <br />
-<a href="/tournament/add">Add</a>
+<a href="/winnerpoints/add">Add</a>
 <br />
     <ul>
       {% for value in values %}
        <li>
-  		 {{value}} <a href='/tournament/view/{{value.id}}'> View</a> <a href='/tournament/delete/{{value.id}}'> Delete</a> <br /> 
+  		 {{value}} <a href='/winnerpoints/delete/{{value.id}}'> Delete</a> <br /> 
        </li>
        {% empty %}
        <li>No values</li>

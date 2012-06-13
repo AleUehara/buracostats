@@ -1,8 +1,8 @@
 #-*- coding: utf-8 -*-
 from django.shortcuts import render_to_response
-from ..forms import PlayerForm
+from information.forms import PlayerForm
 from django.template import RequestContext
-from ..models import Player
+from information.models import Player
 
 def player(request):
 	values = Player.objects.all()
